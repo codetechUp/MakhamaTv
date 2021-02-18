@@ -3,5 +3,33 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+<div class="container mt-5">
+<div class="container m-5">
+ <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div></div>
+<div class="row">
+{% for article in articles %}
+                                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="blog-box">
+                                                                <div class="post-media">
+                                                                    <a href="single.html" title="">
+                                                                        <img src="http://img.youtube.com/vi/{{ article.link | raw}}/0.jpg" >
+                                                                        <div class="hovereffect">
+                                                                        </div><!-- end hover -->
+                                                                        <span class="menucat">Makhama TV</span>
+                                                                    </a>
+                                                                </div><!-- end media -->
+                                                               <!-- end meta -->
+                                                            </div><!-- end blog-box -->
+                                                        </div>
 
+{% endfor %}
+                                                    </div>
+                                                    <!-- end row --></div>
 {% endblock %}

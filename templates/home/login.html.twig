@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %} {% block body %}
+
+
+<div class="log ">
+    <div class="container col-lg-6 " style="margin-top: 10%;">
+        {% for message in app.flashes("success") %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %} {% for message in app.flashes("danger") %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+        {% endfor %}
+        
+            <h4 class="text-white text-center txt"> Veuillez vous connecter! !
+            </h4>
+
+            <div class="shadow p-3 mb-5  rounded">
+                {% if error %}
+                <div class="alert alert-danger">
+                    <ul class="list-unstyled mb-0">
+                        <li><span class="initialism form-error-icon badge badge-danger">{{ error }}</span>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+                <div >
+                    <form class="container  " action="{{ path('login') }}" method="post">
+                        <div class="form-group  mb-2 ">
+                            <label for=""></label>
+                            <input type="text" name="_username" class="form-control" placeholder="Votre nom d'utilisateur....">
+                        </div>
+                        <div class="form-group ">
+                            <label for=""></label>
+                            <input type="password" name="_password" id="" class="form-control" placeholder="Votre password...">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success"> Se connecter</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        
+    </div>
+    <div>
+    </div>
+    <div class="text-light">
+
+    </div>
+</div>
+
+
+{% endblock %}

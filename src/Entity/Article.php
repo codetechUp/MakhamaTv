@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -30,7 +31,17 @@ class Article
     /**
      * @ORM\Column(type="date")
      */
-    private $date;
+    private $date ;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $vue=0;
+    public  function __construct()
+    {
+        $this->date=new DateTime();
+        $this->vue=0;
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +80,18 @@ class Article
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getVue(): ?int
+    {
+        return $this->vue;
+    }
+
+    public function setVue(int $vue): self
+    {
+        $this->vue = $vue;
 
         return $this;
     }

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %} {% block body %}
+<h3 class="text-center pt-3 mt-5 ">Administration</h3>
+<div class="container">
+
+{% for message in app.flashes("success") %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %} {% for message in app.flashes("danger") %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+
+</div>
+<div class="container pt-4 mt-3">
+            <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 p-3">
+                <div class="card p-3 ">
+                    <a href="{{path('addArticle')}}">
+                        <div class="float-left">
+                            <i style="color:#3c4474 ;" class="fab fa-gg-circle fa-5x"></i>
+                        </div>
+                        <h4 class="mt-4">Créer un Article </h4>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 p-3">
+                <div class="card p-3 ">
+                    <a href="#">
+                        <div class="float-left">
+                            <i style="color:#3c4474 ;" class="fas fa-stop-circle fa-5x"></i>
+                        </div>
+                        <h4 class="mt-4"> Les Articles </h4>
+                    </a>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 p-3">
+                <div class="card p-3 ">
+                    <a href="#">
+                        <div class="float-left">
+                            <i style="color:#3c4474 ;" class="fas fa-lock fa-5x"></i>
+                        </div>
+                        <h4 class="mt-4">Mots de passe</h4>
+                    </a>
+                </div>
+
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </div>
+</div>
+            {% endblock %}
